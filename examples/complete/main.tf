@@ -1,9 +1,27 @@
 module "my_module" {
   source = "../../"
 
-  # required arguments
-  # ...
+  fargate_roles = [
+    "arn:aws:iam::111222333444:role/my-fargate-role",
+  ]
 
-  # optional arguments
-  # ...
+  node_roles = [
+    "arn:aws:iam::111222333444:role/my-node-role",
+  ]
+
+  map_roles = [
+    {
+      rolearn  = "arn:aws:iam::111222333444:role/somebody"
+      username = "admin"
+      groups   = ["system:masters"]
+    }
+  ]
+
+  map_users = [
+    {
+      rolearn  = "arn:aws:iam::111222333444:user/somebody"
+      username = "admin"
+      groups   = ["system:masters"]
+    }
+  ]
 }
