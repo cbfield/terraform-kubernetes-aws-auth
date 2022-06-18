@@ -1,4 +1,4 @@
-module "my_module" {
+module "aws_auth" {
   source = "../../"
 
   # required arguments
